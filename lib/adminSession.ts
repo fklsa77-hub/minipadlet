@@ -5,8 +5,7 @@ export const ADMIN_COOKIE = "mindlet_admin";
 const SESSION_VALUE = "mindlet-admin-v1";
 
 function signingSecret() {
-  const secret =
-    process.env.ADMIN_SESSION_SECRET ?? process.env.ADMIN_PASSWORD_HASH;
+  const secret = process.env.ADMIN_SESSION_SECRET;
   if (!secret) throw new Error("관리자 세션 환경 변수가 설정되지 않았습니다.");
   return secret;
 }
